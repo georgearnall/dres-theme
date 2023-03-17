@@ -29,45 +29,44 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site dres">
-	<?php do_action('expound_header_before'); ?>
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<div class="site-title-group">
-				<div class="logo">
-				<?php if (function_exists('the_custom_logo')) {
+    <?php do_action('expound_header_before'); ?>
+    <header id="masthead" class="site-header" role="banner">
+        <div class="site-branding">
+            <div class="site-title-group">
+                <div class="logo">
+                <?php if (function_exists('the_custom_logo')) {
     the_custom_logo();
 }?>
-				</div>
-				<div class= "title_description">
-				<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-				<h2 class="site-description"><?php bloginfo('description'); ?></h2>
-				<p class="site-description2">Looking at the Past, Present and Future of the Railway Industry.<br>Open to all with an interest in Railways.</p>
-			</div>
-			</div>
-		</div>
+                </div>
+                <div class= "title_description">
+                <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
+                <h2 class="site-description"><?php bloginfo('description'); ?></h2>
+                <p class="site-description2">Looking at the Past, Present and Future of the Railway Industry.<br>Open to all with an interest in Railways.</p>
+            </div>
+            </div>
+        </div>
 
-		<nav id="site-navigation" class="navigation-main" role="navigation">
-			<h1 class="menu-toggle"><?php _e('Menu', 'expound'); ?></h1>
-			<a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'expound'); ?></a>
+        <nav id="site-navigation" class="navigation-main" role="navigation">
+            <h1 class="menu-toggle"><?php _e('Menu', 'expound'); ?></h1>
+            <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'expound'); ?></a>
 
-			<?php wp_nav_menu(['theme_location' => 'primary', 'depth' => 3]); ?>
-			<?php wp_nav_menu([
-			    'theme_location' => 'social',
-			    'depth' => 1,
-			    'container_id' => 'expound-social',
-			    'link_before' => '<span>',
-			    'link_after' => '</span>',
-			    'fallback_cb' => '',
-			]); ?>
-			<?php do_action('expound_navigation_after'); ?>
-      <?php if (is_user_logged_in()) : ?>
-          <?php echo get_home_url(); ?>
-          <a href="<?php echo wp_logout_url(get_home_url()); ?>" class="highlight">Logout</a>
-      <?php else : ?>
-          <a href="<?php echo get_home_url()."/join-us" ?>" class="highlight">Join Us</a>
-      <?php endif;?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
-	<?php do_action('expound_header_after'); ?>
+            <?php wp_nav_menu(['theme_location' => 'primary', 'depth' => 3]); ?>
+            <?php wp_nav_menu([
+                'theme_location' => 'social',
+                'depth' => 1,
+                'container_id' => 'expound-social',
+                'link_before' => '<span>',
+                'link_after' => '</span>',
+                'fallback_cb' => '',
+            ]); ?>
+            <?php do_action('expound_navigation_after'); ?>
+            <?php if (is_user_logged_in()) : ?>
+                <a href="<?php echo wp_logout_url(get_home_url()); ?>" class="highlight">Logout</a>
+            <?php else : ?>
+                <a href="<?php echo get_home_url()."/join-us" ?>" class="highlight">Join Us</a>
+            <?php endif;?>
+        </nav><!-- #site-navigation -->
+    </header><!-- #masthead -->
+    <?php do_action('expound_header_after'); ?>
 
-	<div id="main" class="site-main">
+    <div id="main" class="site-main">

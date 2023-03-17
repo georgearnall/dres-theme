@@ -11,12 +11,21 @@ License URI: https://garnall.co.uk
 */
 
 /* Typography */
-html, body, h1,h2,h3,h4,h5,h6 {
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
+
 body {
   font-size: 14px !important;
 }
+
 .dres h1,
 .dres h2,
 .dres h3,
@@ -39,22 +48,22 @@ body {
   padding-right: 20px;
 }
 
-.dres .site-title-group{
+.dres .site-title-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-line-pack: center;
-      align-content: center;
+  align-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   margin-top: 1rem;
   margin-bottom: 1rem;
   text-align: center;
@@ -65,6 +74,7 @@ body {
   margin-bottom: 0.5rem;
   font-variant: small-caps;
 }
+
 .dres .site-title a {
   color: #7e0101;
 }
@@ -76,6 +86,7 @@ body {
   font-size: 1.6rem;
   margin: 0.5rem 0;
 }
+
 .dres .site-description2 {
   margin: 1rem 0 0 0;
   font-style: italic;
@@ -85,12 +96,13 @@ body {
 .dres .logo {
   max-width: 10rem;
 }
-@media only screen and (min-width: 800px){
-  .dres .site-title-group{
+
+@media only screen and (min-width: 800px) {
+  .dres .site-title-group {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     text-align: left;
   }
 
@@ -113,11 +125,13 @@ body {
 .dres .navigation-main .highlight:hover a::after {
   border-top-color: #cc3535;
 }
+
 /* Small menu */
 @media screen and (max-width: 600px) {
   .dres .navigation-main .highlight {
     float: unset;
   }
+
   .dres .navigation-main .highlight a,
   .dres .navigation-main .highlight a:hover {
     background: #cc3535;
@@ -136,29 +150,48 @@ body {
   font-size: 100%;
   border-radius: 0;
 }
+.wp-block-button__link:hover,
+.wp-block-button__link:focus {
+    background: #4a7aae;
+}
+
+.wp-block-button__link:active,
+.wp-block-button__link:visited,
+.wp-block-button__link:hover,
+.wp-block-button__link:focus {
+  color: white;
+}
+
 
 /* Gutenberg Colours */
 .has-blue-color {
   color: #138bcf;
 }
+
 .has-blue-background-color {
   background-color: #138bcf;
 }
+
 .has-red-color {
   color: #cc3535;
 }
+
 .has-red-background-color {
   background-color: #cc3535;
 }
+
 .has-grey-color {
   color: #3a3a3a;
 }
+
 .has-grey-background-color {
   background-color: #3a3a3a;
 }
+
 .has-white-color {
   color: #fff;
 }
+
 .has-white-background-color {
   background-color: #fff;
 }
@@ -185,8 +218,8 @@ body {
   grid-gap: 1rem;
 }
 
+@media only screen and (min-width: 800px) {
 
-@media only screen and (min-width: 800px){
   .rcp_user_fieldset,
   #rcp_profile_editor_form fieldset {
     grid-template-columns: 1fr 1fr;
@@ -200,7 +233,19 @@ body {
 
 [for=rcp_user_first]::after,
 [for=rcp_user_last]::after {
-	content: ' *';
-	font-weight: bold;
-	color: #cc3535;
+  content: ' *';
+  font-weight: bold;
+  color: #cc3535;
+}
+
+input#rcp_login_submit {
+  background-color: #138bcf;
+}
+
+input#rcp_profile_editor_submit {
+  background-color: #138bcf;
+}
+
+input#rcp_submit {
+  background-color: #138bcf;
 }
