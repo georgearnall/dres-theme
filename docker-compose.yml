@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  db:
+    image: mariadb:10.5.8
+    container_name: mysql
+    volumes:
+      - ./database:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: word@press
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: abc@123
+
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:5-php7.4
+    container_name: wp
+    volumes:
+      - ./wordpress_files:/var/www/html
+      - ./src:/var/www/html/wp-content/themes/dres-theme
+    ports:
+      - "80:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: abc@123
+      WORDPRESS_DEBUG: 1

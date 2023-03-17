@@ -1,0 +1,6 @@
+# Ignore artifacts:
+build
+coverage
+dist
+wordpress_files
+vendor

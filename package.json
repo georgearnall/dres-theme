@@ -1,0 +1,41 @@
+{
+  "name": "dres-theme",
+  "version": "1.0.0",
+  "author": "George Arnall <george@garnall.co.uk>",
+  "license": "MIT",
+  "dependencies": {
+    "parcel": "^2.0.0"
+  },
+  "scripts": {
+    "watch": "parcel watch src/js/main.js src/css/global.scss src/css/editor.scss --dist-dir src/dist --public-url /wp-content/themes/overfarm/dist",
+    "serve": "parcel serve src/js/main.js src/css/global.scss src/css/editor.scss --dist-dir src/dist --public-url /wp-content/themes/overfarm/dist",
+    "build": "parcel build src/js/main.js src/css/global.scss src/css/editor.scss --dist-dir src/dist --public-url /wp-content/themes/overfarm/dist",
+    "prepare": "husky install",
+    "format": "yarn prettier --write ./**/*.{js,scss,php}",
+    "bundle": "yarn build; zip -r dres-theme.zip src"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown "
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "2.3.1",
+    "@prettier/plugin-php": "^0.18.1",
+    "autoprefixer": "^10.4.7",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.4",
+    "parcel-plugin-prettier": "^0.2.1",
+    "prettier": "^2.5.1",
+    "sass": "^1.49.7"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "overrideBrowserslist": [
+          "> 1%",
+          "last 4 versions",
+          "ie >= 9"
+        ]
+      }
+    }
+  }
+}

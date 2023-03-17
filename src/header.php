@@ -60,6 +60,12 @@
 			    'fallback_cb' => '',
 			]); ?>
 			<?php do_action('expound_navigation_after'); ?>
+      <?php if (is_user_logged_in()) : ?>
+          <?php echo get_home_url(); ?>
+          <a href="<?php echo wp_logout_url(get_home_url()); ?>" class="highlight">Logout</a>
+      <?php else : ?>
+          <a href="<?php echo get_home_url()."/join-us" ?>" class="highlight">Join Us</a>
+      <?php endif;?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 	<?php do_action('expound_header_after'); ?>

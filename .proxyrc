@@ -1,0 +1,7 @@
+{
+  "/": {
+    "target": "http://localhost/",
+    "autoRewrite": true,
+    "changeOrigin": true
+  }
+}

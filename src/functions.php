@@ -54,3 +54,6 @@ function dres_colors()
     ]);
 }
 add_action('after_setup_theme', 'dres_colors');
+
+// Allows committte users to renew
+add_filter('rcp_can_renew_deactivated_membership_levels', '__return_true');
