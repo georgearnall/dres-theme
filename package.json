@@ -1,6 +1,6 @@
 {
   "name": "dres-theme",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "George Arnall <george@garnall.co.uk>",
   "license": "MIT",
   "dependencies": {
@@ -12,7 +12,7 @@
     "build": "parcel build src/js/main.js src/css/global.scss src/css/editor.scss --dist-dir src/dist --public-url /wp-content/themes/overfarm/dist",
     "prepare": "husky install",
     "format": "yarn prettier --write ./**/*.{js,scss,php}",
-    "bundle": "yarn build; zip -r dres-theme.zip src"
+    "bundle": "yarn build; zip -FSr dres-theme.zip dres-theme -x \"*/.DS_Store\"; zipinfo -1 dres-theme.zip > zip_contents.txt; gsed -i 's/src/dres-theme/g' zip_contents.txt; zipnote -w dres-theme.zip < zip_contents.txt"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown "

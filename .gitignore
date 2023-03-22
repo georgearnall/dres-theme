@@ -482,3 +482,5 @@ node_modules
 .cache
 .parcel-cache
 dres-theme.zip
+dres-theme
+zip_contents.txt
