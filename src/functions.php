@@ -57,3 +57,15 @@ add_action('after_setup_theme', 'dres_colors');
 
 // Allows committte users to renew
 add_filter('rcp_can_renew_deactivated_membership_levels', '__return_true');
+
+
+
+// Add Events Calendar Post Type to the home page
+function events_calendar_on_homepage( $query ) {
+ if ( is_home() && $query->is_main_query() )
+ $query->set( 'post_type', array( 'post', 'tribe_events') );
+ return $query;
+ }
+ add_filter( 'pre_get_posts', 'events_calendar_on_homepage' );
+
+
