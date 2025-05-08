@@ -3,7 +3,7 @@
 Plugin Name: DRES User Profile Fields
 Plugin URI:  https://garnall.co.uk
 Description: Adds custom fields to Restrict content Pro registration pages for DRES.
-Version:     1.0
+Version:     1.1.0
 Author:      George Arnall
 Author URI:  https://garnall.co.uk
 License:     GPL2

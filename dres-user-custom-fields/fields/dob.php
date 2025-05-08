@@ -14,6 +14,7 @@ function dres_add_dob_field()
     <label for="dres_dob" class="required"><?php _e('Date of Birth', 'rcp'); ?></label>
     <input type="date" id="dres_dob" name="dres_dob"
         value="<?php echo esc_attr($alternate_dob); ?>" />
+    <?php dres_display_user_profile_dob($alternate_dob); ?>
 </p>
 
 <?php
@@ -35,6 +36,7 @@ function dres_add_dob_member_edit_field($user_id = 0)
     <td>
         <input type="date" id="dres_dob" name="dres_dob"
             value="<?php echo esc_attr($alternate_dob); ?>" />
+        <p><?php dres_display_user_profile_dob($alternate_dob); ?></p>
     </td>
 </tr>
 <?php
@@ -131,18 +133,20 @@ function dres_add_custom_user_profile_dob($user)
         <td>
             <input type="date" id="dres_dob" name="dres_dob"
                 value="<?php echo esc_attr($alternate_dob); ?>" />
-            <?php
-            if (!empty($alternate_dob)) {
-                $dob = new DateTime($alternate_dob);
-                $now = new DateTime();
-                $diff = $now->diff($dob);
-                echo '<p><em>Age: ' . $diff->y . ' years, ' . $diff->m . ' months</em></p>';
-            }
-            ?>
+            <p><?php dres_display_user_profile_dob($alternate_dob); ?></p>
         </td>
     </tr>
 </table>
 <?php
+}
+
+function dres_display_user_profile_dob($dob_string) {
+    if (!empty($dob_string)) {
+        $dob = new DateTime($dob_string);
+        $now = new DateTime();
+        $diff = $now->diff($dob);
+        echo '<em>Age: ' . $diff->y . ' years, ' . $diff->m . ' months</em>';
+    }
 }
 
 add_action('show_user_profile', 'dres_add_custom_user_profile_dob');
