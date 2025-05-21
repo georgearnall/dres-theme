@@ -13,6 +13,7 @@ function dres_rcp_add_user_phone_fields()
 		border: 1px solid #ccc;
 	}
 </style>
+<h3>Contact Details</h3>
 <p>
     <label for="dres_phone_mobile" class="required"><?php _e('Mobile Phone', 'dres'); ?></label>
     <input name="dres_phone_mobile" id="dres_phone_mobile" type="tel"

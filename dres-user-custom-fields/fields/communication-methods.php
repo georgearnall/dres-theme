@@ -151,8 +151,7 @@ add_action('rcp_edit_member', 'ag_rcp_save_multicheck_field_on_profile_save', 10
 function dres_add_custom_user_profile_communication_method($user)
 {
     ?>
-<h3><?php _e('Extra Profile Information', 'dres'); ?>
-</h3>
+<h3><?php _e('Extra Profile Information', 'dres'); ?></h3>
 
 <table class="form-table">
     <?php ag_rcp_add_multicheck_member_edit_fields($user); ?>
