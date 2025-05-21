@@ -18,6 +18,7 @@ require_once 'fields/dob.php';
 require_once 'fields/phone.php';
 require_once 'fields/profile.php';
 require_once 'fields/name.php';
+require_once 'rcp-export.php';
 
 function logged_in_shortcode($atts, $content = null)
 {
